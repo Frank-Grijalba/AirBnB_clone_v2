@@ -9,9 +9,9 @@ def do_pack():
     now = datetime.datetime.now()
     file = ('versions/web_static_{}{}{}{}{}{}.tgz'.format(now.year,
             now.month, now.day, now.hour, now.minute, now.second))
-    local("mkdir versions")
+    local("mkdir -p versions")
     path = "web_static"
-    if local("tar -czvf {} {}".format(file, path)).failed:
+    if local("tar -czvf {} {}".format(file, path)).failed is True:
         return None
     else:
         return file

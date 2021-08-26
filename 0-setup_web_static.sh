@@ -11,6 +11,8 @@ rm -rf /data/web_static/releases/test/index.html
 echo "
 <html>
   <head>
+    <meta charset='UTF-8'>
+    <title>My profile</title>
   </head>
   <body>
     <a href="https://github.com/Frank-Grijalba">My Github</a>
@@ -20,14 +22,5 @@ echo "
 " >> /data/web_static/releases/test/index.html
 rm -rf /data/web_static/current
 sudo ln -s /data/web_static/releases/test /data/web_static/current
-rm -rf /etc/nginx/sites-available/default
-echo "
-server {
-	listen 80 default_server;
-    listen [::]:80 default_server;
-    location /hbnb_static/ {
-        alias /data/web_static/current/;
-    }
-}
-" >> /etc/nginx/sites-available/default
+sudo sed -i '/listen 80 default_server/a \\n\tlocation /hbnb_static/ {\n\t\talias /data/web_static/current/;\n\t}\n' /etc/nginx/sites-available/default
 sudo service nginx restart
