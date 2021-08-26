@@ -14,8 +14,7 @@ echo "
     <title>My profile</title>
   </head>
   <body>
-    <a href="https://github.com/Frank-Grijalba">My Github</a>
-    <br><a href="https://twitter.com/FrankGrijalba">My twitter</a></br>
+     <p>Holberton is cool</p>
   </body>
 </html>
 " >> /data/web_static/releases/test/index.html
