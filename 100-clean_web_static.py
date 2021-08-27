@@ -4,6 +4,7 @@ from fabric.api import *
 import os
 
 def do_clean(number=0):
+    """ Delete garbage """
     if number < 0:
         return None
     number = 2 if (number == 0 or number == 1) else (number + 1)
