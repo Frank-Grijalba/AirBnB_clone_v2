@@ -30,10 +30,9 @@ city_2_1.save()
 """
  Verification
 """
-print("++++++++++++++++++++Verification++++++++++++++++++++++")
-all_states = storage.all(City)
+print("")
+all_states = storage.all(State)
 
-print(all_states)
-# for state_id, state in all_states.items():
-#     for city in state.cities:
-#         print("Find the city {} in the state {}".format(city, state))
+for state_id, state in all_states.items():
+    for city in state.cities:
+        print("Find the city {} in the state {}".format(city, state))
