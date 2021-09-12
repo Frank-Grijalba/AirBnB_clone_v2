@@ -67,9 +67,9 @@ class DBStorage:
             self.__session.close()
 
         Base.metadata.create_all(self.__engine)
-        factory = sessionmaker(bind=self.__engine,
+        self.__session = sessionmaker(bind=self.__engine,
                                expire_on_commit=False)
-        Session = scoped_session(factory)
+        Session = scoped_session(self.__session)
         self.__session = Session()
 
     def close(self):
