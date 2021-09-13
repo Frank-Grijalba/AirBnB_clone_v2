@@ -4,7 +4,7 @@
 from models import storage
 from models.state import State
 from flask import Flask, render_template
-import os
+
 
 app = Flask(__name__)
 
